@@ -11,10 +11,11 @@ Basic Structure
 
 Here’s what a DataFrame looks like:
 
-Name	Age	City
-Alice	25	New York
-Bob	30	San Diego
-Carol	22	Chicago
+| Name  | Age | City       |
+|-------|-----|------------|
+| Alice | 25  | New York   |
+| Bob   | 30  | San Diego  |
+| Carol | 22  | Chicago    |
 
 This structure is ideal for:
 	•	Viewing data
@@ -31,22 +32,23 @@ import pandas as pd
 2. Create a DataFrame
 
 You can create a DataFrame from a Python dictionary:
-
+```python
 data = {
     'Name': ['Alice', 'Bob', 'Carol'],
     'Age': [25, 30, 22],
     'City': ['New York', 'San Diego', 'Chicago']
 }
-
+```
 df = pd.DataFrame(data)
 print(df)
 
 Output:
 
-    Name  Age       City
-0  Alice   25   New York
-1    Bob   30  San Diego
-2  Carol   22    Chicago
+| Index | Name  | Age | City       |
+|-------|-------|-----|------------|
+| 0     | Alice | 25  | New York   |
+| 1     | Bob   | 30  | San Diego  |
+| 2     | Carol | 22  | Chicago    |
 
 Key DataFrame Concepts
 
@@ -60,26 +62,23 @@ df.iloc[0]	Access first row (by index)
 df.loc[0]	Access row by label (if using custom index)
 
 Real-World Uses of DataFrames
-	•	Reading a CSV file:
-
+• Reading a CSV file:
+```python
 df = pd.read_csv('file.csv')
-
-
-	•	Writing to Excel:
-
+```
+• Writing to Excel:
+```python
 df.to_excel('output.xlsx')
-
-
-	•	Filtering rows:
-
+```
+• Filtering rows:
+```python
 df[df['Age'] > 25]
-
-
-	•	Sorting:
-
+```
+• Sorting:
+```python
 df.sort_values(by='Age', ascending=False)
-
-
-	•	Adding a new column:
-
+```
+• Adding a new column:
+```python
 df['Is_Adult'] = df['Age'] >= 18
+```
